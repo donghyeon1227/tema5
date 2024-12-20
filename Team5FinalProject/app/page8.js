@@ -7,7 +7,7 @@ const Page8 = () => {
   const [names, setNames] = useState(Array(6).fill(''));
   const [mapInputs, setMapInputs] = useState(Array(6).fill(''));
 
-  // 각 입력 필드의 위치 (top, left 좌표)
+
   const inputCoordinates = [
    { top: 9, left: 156 },
    { top: 49, left: 169 },
@@ -29,10 +29,10 @@ const Page8 = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* 제목 */}
+
       <Text style={styles.title}> 앞서 기억해둔 관동팔경 6가지 명승지 이름을 순서대로 적어보세요</Text>
 
-      {/* 첫 번째 입력 영역 */}
+
       <View style={styles.inputGrid}>
         {names.map((value, index) => (
           <TextInput
@@ -58,7 +58,7 @@ const Page8 = () => {
             style={[
               styles.mapInput,
               { top: inputCoordinates[index].top, left: inputCoordinates[index].left },
-            ]} // 좌표별로 위치 설정
+            ]} 
             placeholder={`지도 명승지 ${index + 1}`}
             value={value}
             onChangeText={(text) => handleChangeText(mapInputs, index, text)}
