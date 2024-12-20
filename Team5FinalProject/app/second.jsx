@@ -24,12 +24,12 @@ const SecondScreen = () => {
     const updatedFlags = [...selectedFlags];
     updatedFlags[selectedFlagIndex] = flag.image;
     setSelectedFlags(updatedFlags);
-    setIsModalVisible(false);  // 모달 닫기
+    setIsModalVisible(false);  
   };
 
   const handleFlagModalOpen = (index) => {
-    setSelectedFlagIndex(index);  // 어느 행에서 국기를 선택할지 설정
-    setIsModalVisible(true);  // 모달 열기
+    setSelectedFlagIndex(index);  
+    setIsModalVisible(true); 
   };
 
   const handleSubmit = () => {
@@ -52,15 +52,15 @@ const SecondScreen = () => {
 
   return (
     <View style={styles.container}>
-      {/* 첫 번째 텍스트 */}
+      
       <Text style={styles.instructions}>
         1. 메달 순위는 금메달의 개수가 많은 순으로 결정이 됩니다. 1등부터 3등까지 순위를 매겨 단상의 빈칸에 각 국가의 이름을 적어보세요.
       </Text>
 
-      {/* 메달 이미지 */}
+  
       <Image source={require('../assets/images/medal.jpg')} style={styles.image} />
 
-      {/* 사용자 입력 칸 */}
+  
       <TextInput
         style={styles.input}
         placeholder="정답을 입력하세요"
@@ -69,18 +69,17 @@ const SecondScreen = () => {
       />
       <Button title="정답 제출" onPress={handleSubmit} />
 
-      {/* 두 번째 텍스트 */}
+  
       <Text style={styles.instructions}>
         2. 포상금을 많이 받은 순서대로 국가 이름을 적고, 국기를 그려보세요.
       </Text>
 
-      {/* 3x4 테이블 */}
       <View style={styles.table}>
         {tableData.map((row, rowIndex) => (
           <View key={rowIndex} style={styles.row}>
             {row.map((cell, cellIndex) => {
               if (rowIndex === 1 && cellIndex > 0) {
-                // 국가 이름 입력란
+              
                 return (
                   <View key={cellIndex} style={styles.cell}>
                     <TextInput
@@ -92,7 +91,7 @@ const SecondScreen = () => {
                   </View>
                 );
               } else if (rowIndex === 2 && cellIndex > 0) {
-                // 국기 선택란
+          
                 return (
                   <View key={cellIndex} style={styles.cell}>
                     <TouchableOpacity onPress={() => handleFlagModalOpen(cellIndex - 1)}>
@@ -118,7 +117,7 @@ const SecondScreen = () => {
         ))}
       </View>
 
-      {/* 국기 선택 모달 */}
+  
       <Modal visible={isModalVisible} transparent={true} animationType="slide">
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>
