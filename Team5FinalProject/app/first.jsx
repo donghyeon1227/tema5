@@ -21,7 +21,7 @@ const Table = () => {
     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
   ];
 
-  // 국가 이미지 경로 설정
+  
   const imageBrazil = require('../assets/images/브라질.jpg');
   const imageChina = require('../assets/images/중국.jpg');
   const imageKorea = require('../assets/images/대한민국.jpg');
@@ -83,7 +83,7 @@ const Table = () => {
           {row.map((cell, cellIndex) => {
             let image = null;
 
-            // 국가 이미지가 들어갈 셀 설정 (첫 번째 열)
+           
             if (cellIndex === 0) {
               if (rowIndex === 1) image = imageBrazil;   // 첫 번째 행: 브라질 이미지
               else if (rowIndex === 2) image = imageChina; // 두 번째 행: 중국 이미지
@@ -92,7 +92,7 @@ const Table = () => {
               else if (rowIndex === 5) image = imageJapan; // 다섯 번째 행: 일본 이미지
             }
 
-            // 각 셀에 맞는 메달 이미지 삽입
+            
             const isBronzeCell = imageBronze.some(([r, c]) => r === rowIndex && c === cellIndex);
             const isSilverCell = imageSilver.some(([r, c]) => r === rowIndex && c === cellIndex);
             const isGoldCell = imageGold.some(([r, c]) => r === rowIndex && c === cellIndex);
