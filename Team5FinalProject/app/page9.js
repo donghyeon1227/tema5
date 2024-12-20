@@ -52,13 +52,13 @@ const Page9 = () => {
 
   const renderItem = ({ item }) => (
     <View style={styles.itemContainer}>
-      {/* 왼쪽 이미지 */}
+      
       <View style={styles.imageContainer}>
         <Image source={item.image} style={styles.image} />
       </View>
-      {/* 연결선 */}
+
       <View style={styles.line} />
-      {/* 오른쪽 텍스트 */}
+   
       <View style={styles.textContainer}>
         <Text style={styles.title}>{item.name}</Text>
         <Text style={styles.subtitle}>위치: {item.location}</Text>
@@ -80,7 +80,7 @@ const Page9 = () => {
         renderItem={renderItem}
         contentContainerStyle={styles.listContainer}
       />
-      {/* 다음 버튼 */}
+
       <TouchableOpacity
         style={styles.nextButton}
         onPress={handleNext}
